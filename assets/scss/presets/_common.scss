@@ -1,3 +1,6 @@
+@use "media-mixins" as *;
+@use "variables" as *;
+
 *,
 ::before,
 ::after {
@@ -20,9 +23,16 @@ body {
 
 .dashboard-wrapper {
     padding-bottom: 40px;
-    display: grid;
-    grid-template-columns: 306px 1fr;
     height: 100%;
+    display: grid;
+
+    @include md-min {
+        grid-template-columns: 306px 1fr;
+    }
+
+    @include md {
+        grid-area: "menu" "customers";
+    }
 }
 
 a {
