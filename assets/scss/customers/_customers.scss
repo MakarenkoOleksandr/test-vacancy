@@ -1,6 +1,7 @@
 @use "../presets" as *;
 
 .customers {
+    grid-area: customers;
     background-color: $color-grey-6;
     padding-top: 40px;
 
@@ -61,8 +62,15 @@
 
     &__list {
         &-header {
+            @include lg-min {
+                font-size: 14px;
+            }
+
+            @include lg {
+                font-size: 10px;
+            }
+
             font-weight: 500;
-            font-size: 14px;
             letter-spacing: -0.01em;
             padding-bottom: 40px;
 
@@ -70,9 +78,16 @@
         }
 
         &-item {
+            @include lg-min {
+                font-size: 14px;
+            }
+
+            @include lg {
+                font-size: 10px;
+            }
+
             position: relative;
             font-weight: 500;
-            font-size: 14px;
 
             letter-spacing: -0.01em;
 
@@ -112,7 +127,13 @@
         }
 
         &-listlength {
-            font-size: 14px;
+            @include lg-min {
+                font-size: 14px;
+            }
+
+            @include lg {
+                font-size: 10px;
+            }
 
             letter-spacing: -0.01em;
 
@@ -156,12 +177,19 @@
 }
 
 .btn-active {
+    @include lg-min {
+        font-size: 14px;
+    }
+
+    @include lg {
+        font-size: 10px;
+    }
+
     background: rgba(22, 192, 152, 0.38);
     border: 1px solid $color-green-2;
     border-radius: 4px;
     padding: 4px 18px;
     font-weight: 500;
-    font-size: 14px;
 
     letter-spacing: -0.01em;
 
@@ -170,12 +198,19 @@
 }
 
 .btn-inactive {
+    @include lg-min {
+        font-size: 14px;
+    }
+
+    @include lg {
+        font-size: 10px;
+    }
+
     padding: 4px 12px;
     background: $color-pink;
     border: 1px solid $color-red;
     border-radius: 4px;
     font-weight: 500;
-    font-size: 14px;
 
     letter-spacing: -0.01em;
 
@@ -184,7 +219,20 @@
 }
 
 .padding {
-    padding-right: 64px;
+    @include ul-min {
+        padding-right: 64px;
+    }
+
+    @include ul-lg {
+        padding-right: 20px;
+    }
+
+    @include lg {
+        padding-right: 5px;
+    }
+
+
+
     padding-bottom: 50px;
 }
 
