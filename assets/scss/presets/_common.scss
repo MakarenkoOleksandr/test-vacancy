@@ -22,17 +22,19 @@ body {
 }
 
 .dashboard-wrapper {
-    padding-bottom: 40px;
-    height: 100%;
-    display: grid;
-
-    @include md-min {
+    @include lg-min {
+        display: grid;
         grid-template-columns: 306px 1fr;
     }
 
-    @include md {
-        grid-area: "menu" "customers";
+    @include lg {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
     }
+
+    padding-bottom: 40px;
+    height: 100%;
+
 }
 
 a {
