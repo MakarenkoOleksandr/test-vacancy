@@ -1,3 +1,52 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
 /*! SCSS version of normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -406,4 +455,130 @@ canvas {
  */
 template, [hidden] {
   display: none;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.menu__list-link {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+  padding: 15px;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #9197B3;
+}
+
+.active {
+  position: relative;
+  background: #5932EA;
+  border-radius: 8px;
+  color: #FFFFFF;
+}
+.active::after {
+  position: absolute;
+  top: 22px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  content: "";
+  background-image: url(../img/menu/menu-arrow-white.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.arrow {
+  position: relative;
+}
+.arrow::after {
+  position: absolute;
+  top: 22px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  content: "";
+  background-image: url(../img/menu/menu-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.dashboard-wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: grid;
+  grid-template-columns: 306px 1fr;
+}
+
+.sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.sidebar__header {
+  padding-bottom: 45px;
+}
+.sidebar__header-link {
+  position: relative;
+}
+.sidebar__header-link::after {
+  position: absolute;
+  width: 18px;
+  height: 15px;
+  bottom: 9px;
+  right: -23px;
+  content: "v.01";
+  font-size: 10px;
+  color: #838383;
+}
+
+.sidebar__manager {
+  display: grid;
+  grid-template-columns: -webkit-max-content -webkit-max-content;
+  grid-template-columns: max-content max-content;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  grid-template-areas: "photo name" "photo rank";
+}
+.sidebar__manager-photo {
+  grid-area: photo;
+}
+.sidebar__manager-name {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  grid-area: name;
+}
+.sidebar__manager-rank {
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+  color: #757575;
+  grid-area: rank;
 }

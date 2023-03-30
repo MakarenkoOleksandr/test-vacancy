@@ -1,0 +1,65 @@
+@use "../presets" as *;
+
+.dashboard-wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-columns: 306px 1fr;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    &__header {
+        padding-bottom: 45px;
+
+        &-link {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                width: 18px;
+                height: 15px;
+                bottom: 9px;
+                right: -23px;
+                content: "v.01";
+                font-size: 10px;
+                color: $color-grey;
+            }
+
+        }
+    }
+
+}
+
+.sidebar__manager {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    column-gap: 10px;
+    grid-template-areas: "photo name" "photo rank";
+
+    &-photo {
+        grid-area: photo;
+    }
+
+    &-name {
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.01em;
+        grid-area: name;
+    }
+
+    &-rank {
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.01em;
+
+        color: $color-grey-3;
+        grid-area: rank;
+    }
+
+}
